@@ -14,6 +14,8 @@ class QcaQt5 < Formula
 
     mkdir "build" do
       args = std_cmake_args
+      args << "-D BUILD_TESTS:BOOL=OFF"
+      args << "-D QCA_INSTALL_IN_QT_PREFIX:BOOL=ON"
       system "cmake", "..", *args
       #system "bbedit", "CMakeCache.txt"
       #raise
